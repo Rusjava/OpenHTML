@@ -93,10 +93,10 @@ public class OpenParserDelegator extends HTMLEditorKit.Parser {
         //Fetching HTML 3.2 DTD
         DTD dtd4 = getDefaultDTD();
         //Adding HTML 4.0 tags
-        insertInlineElement(dtd4, "acronym", "em");
-        insertInlineElement(dtd4, "abbr", "acronym");
-        insertInlineElement(dtd4, "q", "em");
-        insertInlineElement(dtd4, "button", "div");
+        insertFlowElement(dtd4, "acronym", "em");
+        insertFlowElement(dtd4, "abbr", "acronym");
+        insertFlowElement(dtd4, "q", "em");
+        insertFlowElement(dtd4, "button", "div");
         //insertElementInContentModel(dtd4.getElement("button"), "div", dtd4);
         return dtd4;
     }
@@ -133,7 +133,7 @@ public class OpenParserDelegator extends HTMLEditorKit.Parser {
      * @param elemName element name to insert
      * @param sampleElemName next element name
      */
-    protected static void insertInlineElement(DTD inDtd, String elemName, String sampleElemName) {
+    protected static void insertFlowElement(DTD inDtd, String elemName, String sampleElemName) {
         //Getting the next element
         Element sampleElem = inDtd.getElement(sampleElemName);
         //Adding tag to the DTD
