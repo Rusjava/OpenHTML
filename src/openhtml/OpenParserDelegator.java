@@ -97,7 +97,7 @@ public class OpenParserDelegator extends HTMLEditorKit.Parser {
         insertFlowElement(dtd4, "abbr", "acronym");
         insertFlowElement(dtd4, "q", "em");
         insertFlowElement(dtd4, "button", "div");
-        //insertElementInContentModel(dtd4.getElement("button"), "div", dtd4);
+        insertFlowElement(dtd4, "label", "input");
         return dtd4;
     }
 
